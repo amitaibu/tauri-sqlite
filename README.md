@@ -11,13 +11,13 @@ This template should help get you started developing with Tauri in vanilla HTML,
 
 ```
 xhost +local:root
-docker run -it --rm \
+
+docker run -it --rm --network=host \
   -e DISPLAY=$DISPLAY \
   -v /tmp/.X11-unix:/tmp/.X11-unix \
-  -v "$PWD":/app \
+  -v "$PWD:/app" \
   -w /app \
-  ivangabriele/tauri:debian-bookworm-22 \
-  bash
+  ivangabriele/tauri:debian-bookworm-22 bash
 ```
 
 Then from Docker
